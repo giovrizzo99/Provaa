@@ -30,7 +30,19 @@
             this.initMain();
         }
 
+        async fetchBase64Pdf(url) {
+            try {
+                let response = await fetch(url);
+                let text = await response.text();
+                this.setAttribute("base64", text.trim());
+            } catch (error) {
+                console.error("Error fetching Base64 PDF:", error);
+            }
+        }
+
         initMain() {
+            let rawGithubUrl = "https://raw.githubusercontent.com/giovrizzo99/Provaa/refs/heads/main/PROVA_base64.txt";
+            this.fetchBase64Pdf(rawGithubUrl);
             let base64 = this._props.base64 || this.getAttribute("base64");
             if (base64) {
                 this.updatePdf(base64);
