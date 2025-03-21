@@ -41,7 +41,7 @@
         }
 
         initMain() {
-            let rawGithubUrl = "https://raw.githubusercontent.com/giovrizzo99/Provaa/refs/heads/main/PROVA_base64.txt";
+            let rawGithubUrl = "https://raw.githubusercontent.com/giovrizzo99/Provaa/refs/heads/main1/PROVA_base64.txt";
             this.fetchBase64Pdf(rawGithubUrl);
             let base64 = this._props.base64 || this.getAttribute("base64");
             if (base64) {
